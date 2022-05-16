@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SSU.Coins.BLL.Interface\SSU.Coins.BLL.Interface.csproj" />
+    <ProjectReference Include="..\SSU.Coins.dbContext\SSU.Coins.dbContext.csproj" />
+    <ProjectReference Include="..\SSU.Coins.Entities\SSU.Coins.Entities.csproj" />
+    <ProjectReference Include="..\SSU.Coins.Excecption\SSU.Coins.Excecption.csproj" />
+  </ItemGroup>
+
+</Project>

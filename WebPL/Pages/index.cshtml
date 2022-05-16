@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "BasePages/_basePage.cshtml";
+    Page.Section = "MainPage";
+}
+@section MainPage{
+    <main role="main">
+        @RenderPage("~/Pages/BasePages/_header.cshtml")
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <a class="col-md-4" href="~/Pages/CoinsCatalog.cshtml?Country=USSR">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="~/Style/Pic/Ili4.png" alt="Alternate Text" class="picCountry" />
+                            <div class="card-body">
+                                <h2 class="card-text countryText text-center">СССР</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col-md-4" href="~/Pages/CoinsCatalog.cshtml?Country=Russia">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="~/Style/Pic/Rus.png" alt="Alternate Text" class="picCountry" />
+                            <div class="card-body">
+                                <h2 class="card-text countryText text-center">Российская Федерация</h2>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col-md-4" href="~/Pages/CoinsCatalog.cshtml?Country=Germany">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="~/Style/Pic/Ger.png" alt="Alternate Text" class="picCountry" />
+                            <div class="card-body">
+                                <h2 class="card-text countryText text-center">Германия</h2>
+                            </div>
+                        </div>
+                    </a>
+                    
+        <a class="col-md-4" href="~/Pages/CoinsCatalog.cshtml?Country=China">
+            <div class="card mb-4 shadow-sm">
+                <img src="~/Style/Pic/China.png" alt="Alternate Text" class="picCountry" />
+                <div class="card-body">
+                    <h2 class="card-text countryText text-center">Китай</h2>
+                </div>
+            </div>
+        </a>
+                </div>
+                </div>
+            </div>
+        </main>
+    }

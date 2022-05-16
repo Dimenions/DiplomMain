@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\404.cshtml" />
+    <Content Remove="Pages\AddCoin.cshtml" />
+    <Content Remove="Pages\BasePages\_basePage.cshtml" />
+    <Content Remove="Pages\BasePages\_filterForCountry.cshtml" />
+    <Content Remove="Pages\BasePages\_header.cshtml" />
+    <Content Remove="Pages\CoinsCatalog.cshtml" />
+    <Content Remove="Pages\FirstArticle.cshtml" />
+    <Content Remove="Pages\index.cshtml" />
+    <Content Remove="Pages\PageCoin.cshtml" />
+    <Content Remove="Pages\SecondArticle.cshtml" />
+    <Content Remove="Pages\SignIn.cshtml" />
+    <Content Remove="Pages\SignOut.cshtml" />
+    <Content Remove="Pages\SignUp.cshtml" />
+    <Content Remove="Pages\ThirdArticle.cshtml" />
+    <Content Remove="Pages\Trainings.cshtml" />
+    <Content Remove="Redirect\redirectAddCoin.cshtml" />
+    <Content Remove="Redirect\redirectSignIn.cshtml" />
+    <Content Remove="Redirect\redirectSignUp.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\404.cshtml" />
+    <None Include="Pages\AddCoin.cshtml" />
+    <None Include="Pages\BasePages\_basePage.cshtml" />
+    <None Include="Pages\BasePages\_filterForCountry.cshtml" />
+    <None Include="Pages\BasePages\_header.cshtml" />
+    <None Include="Pages\CoinsCatalog.cshtml" />
+    <None Include="Pages\FirstArticle.cshtml" />
+    <None Include="Pages\index.cshtml" />
+    <None Include="Pages\PageCoin.cshtml" />
+    <None Include="Pages\SecondArticle.cshtml" />
+    <None Include="Pages\SignIn.cshtml" />
+    <None Include="Pages\SignOut.cshtml" />
+    <None Include="Pages\SignUp.cshtml" />
+    <None Include="Pages\ThirdArticle.cshtml" />
+    <None Include="Pages\Trainings.cshtml" />
+    <None Include="Redirect\redirectAddCoin.cshtml" />
+    <None Include="Redirect\redirectSignIn.cshtml" />
+    <None Include="Redirect\redirectSignUp.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SSU.Coins.BLL.Interface\SSU.Coins.BLL.Interface.csproj" />
+    <ProjectReference Include="..\SSU.Coins.BLL\SSU.Coins.BLL.csproj" />
+    <ProjectReference Include="..\SSU.Coins.Ioc\SSU.Coins.Ioc.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>
