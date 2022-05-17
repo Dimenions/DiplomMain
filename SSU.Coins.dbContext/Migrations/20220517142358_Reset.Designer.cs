@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SSU.Coins.dbContext.Migrations
 {
     [DbContext(typeof(CoinsContext))]
-    [Migration("20220517140858_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220517142358_Reset")]
+    partial class Reset
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

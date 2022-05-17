@@ -6,12 +6,12 @@ namespace SSU.Coins.BLL
 {
     public class RoleWebSiteLogic : IRoleWebSiteLogic
     {
-        /*private IRoleWebSiteDao _roleWebSiteLogic;
+        private CoinsContext _roleWebSiteLogic;
 
-        public RoleWebSiteLogic(IRoleWebSiteDao roleWebSiteLogic)
+        public RoleWebSiteLogic(CoinsContext roleWebSiteLogic)
         {
             _roleWebSiteLogic = roleWebSiteLogic;
-        }*/
+        }
         public IEnumerable<RoleWebSite> GetAll()
         {
             //return _roleWebSiteLogic.GetAll();

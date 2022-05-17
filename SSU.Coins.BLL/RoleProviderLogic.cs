@@ -1,20 +1,22 @@
 ﻿using SSU.Coins.BLL.Interface;
+using SSU.Coins.BLL.Extensions;
 
 namespace SSU.Coins.BLL
 {
     public class MyRoleProviderLogic : IMyRoleProviderLogic
     {
-        /*private IMyRoleProviderDao _provDao;
+       private CoinsContext _context;
 
-        public MyRoleProviderLogic(IMyRoleProviderDao provDao)
+        public MyRoleProviderLogic(CoinsContext roleLogic)
         {
-            _provDao = provDao;
-        }*/
-
-        public string GetRolesForUser(string username)
-        {
-            //return _provDao.GetRolesForUser(username);
-            return null;
+            _context = roleLogic;
         }
+
+        /*public string GetRolesForUser(string username)
+        {
+            return _context.RoleWebSites
+                 .Where(p => p.Name == username)
+                 .Select(p => p.ToRoleWebSite);
+        }*/
     }
 }

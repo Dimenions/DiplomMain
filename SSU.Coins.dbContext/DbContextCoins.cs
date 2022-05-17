@@ -19,7 +19,9 @@ public class CoinsContext : DbContext
             //optionsBuilder.UseSqlServer(Configuration[]"ConnectionString");
             optionsBuilder.UseSqlServer(@"Server = (LocalDb)\MSSQLLocalDB; initial catalog = SSU.Coins.dbContext.SSU.Coin; integrated security = True; MultipleActiveResultSets = True; App = EntityFramework");
         }
+        //.\SQLEXPRESS01
         //Add-Migration InitialCreate
+        //add-migration Reset
         //Update-Database
     }
 

@@ -3,17 +3,18 @@ using SSU.Coins.BLL.Interface;
 using SSU.Coins.Entities;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using SSU.Coins.BLL.Extensions;
 
 namespace SSU.Coins.BLL
 {
     public class UserLogic //: IUserLogic
     {
-        /*private IUserDao _userDao;
+        private CoinsContext _context;
 
-        public UserLogic(IUserDao userLogic)
+        public UserLogic(CoinsContext userLogic)
         {
-            _userDao = userLogic;
-        }*/
+            _context = userLogic;
+        }
 
         public void Add(User user, out ICollection<Error> listError)
         {
@@ -26,7 +27,7 @@ namespace SSU.Coins.BLL
                     byte[] hashValue = mySHA256.ComputeHash(user.HashPassword);
                     user.HashPassword = hashValue;
                 }
-                //_userDao.Add(user);
+                _context.Add(user);
             }
             catch (UniqueIdentifierException ex)
             {
@@ -54,76 +55,58 @@ namespace SSU.Coins.BLL
 
         public IEnumerable<User> GetAll()
         {
-            //return _userDao.GetAll();
-            return null;
+            return _context.Users.Select(p => p.ToUser());
         }
 
         public IEnumerable<User> GetAllUserByRole(int id)
         {
-            //return _userDao.GetAllUserByRole(id);
-            return null;
+            return _context.Users
+                .Where(p => p.RoleWebSite.RoleWebSiteId == id)
+                .Select(p => p.ToUser());
         }
 
         public User GetById(int id)
         {
-            //return _userDao.GetById(id);
-            return null;
+            var user = _context.Users
+                .FirstOrDefault(p => p.UserId == id);
+
+            return user.ToUser();
         }
 
         public User GetByLogin(string login)
         {
-            //return _userDao.GetByLogin(login);
-            return null;
-        }
-        /*
-        public void Remove(int id, out ICollection<Error> listError)
-        {
-            listError = new List<Error>();
-            try
-            {
-                if (_userDao.GetById(id) == null)
-                {
-                    listError.Add(new Error
-                    {
-                        Message = "User won't find"
-                    });
-                    return;
-                }
+            var user = _context.Users
+                .FirstOrDefault(p => p.Login == login);
 
-                _userDao.Remove(id);
-            }
-            catch
-            {
-                listError.Add(new Error
-                {
-                    Message = "Internal error, try again"
-                });
-            }
+            return user.ToUser();
+        }
+        public void Remove(int id, ICollection<Error> listError)
+        {
+            var user = _context.Users
+                 .FirstOrDefault(p => p.UserId == id);
+            if (user == null) { return; }
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
 
-        public void Update(User user, out ICollection<Error> listError)
+        public void Update(User user, ICollection<Error> listError)
         {
-            listError = new List<Error>();
-            try
-            {
-                if (_userDao.GetById(user.Id) == null)
-                {
-                    listError.Add(new Error
-                    {
-                        Message = "User won't find"
-                    });
-                    return;
-                }
+            var userModel = user.ToUserModel();
 
-                _userDao.Update(user);
-            }
-            catch (RoleUndefinedException ex)
-            {
-                listError.Add(new Error
-                {
-                    Message = ex.Message
-                });
-            }
-        }*/
+            var newUser = _context.Users
+       .FirstOrDefault(c => c.UserId == user.Id);
+
+
+            var newRoleWebSite = _context.RoleWebSites
+       .FirstOrDefault(c => c.Name == user.RoleWebSite);
+
+            userModel.RoleWebSite = newRoleWebSite;
+
+            _context.Users.Update(userModel);
+
+            _context.SaveChanges();
+
+        }
     }
 }

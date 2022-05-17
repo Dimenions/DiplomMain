@@ -5,13 +5,13 @@ namespace SSU.Coins.BLL
 {
     public class AuthLogic //: IAuthLogic
     {
-        /*private IAuthDao _authDao;
-        public AuthLogic(IAuthDao authDao)
+        private CoinsContext _authDao;
+        public AuthLogic(CoinsContext authDao)
         {
             _authDao = authDao;
         }
 
-        public bool CanLogin(string login, byte[] password)
+        /*public bool CanLogin(string login, byte[] password)
         {
             using (SHA256 mySHA256 = SHA256.Create())
             {

@@ -1,44 +1,57 @@
-﻿using SSU.Coins.BLL.Interface;
+﻿using SSU.Coins.BLL.Extensions;
+using SSU.Coins.BLL.Interface;
 using SSU.Coins.Entities;
 
 namespace SSU.Coins.BLL
 {
     public class MaterialLogic : IMaterialLogic
     {
-        /*private IMaterialDao _materialLogic;
+        private CoinsContext _context;
 
-        public MaterialLogic(IMaterialDao materialLogic)
+        public MaterialLogic(CoinsContext materialLogic)
         {
-            _materialLogic = materialLogic;
-        }*/
+            _context = materialLogic;
+        }
 
         public IEnumerable<Material> GetAll()
         {
-            //return _materialLogic.GetAll();
-            return null;
+            return _context.Materials.Select(p => p.ToMaterial());
         }
 
         public Material GetById(int id)
         {
-            //return _materialLogic.GetById(id);
-            return null;
+            var material = _context.Materials
+                .FirstOrDefault(p => p.MaterialId == id);
+
+            return material.ToMaterial();
         }
 
-        public Material GetByTitle(string title)
+        public IEnumerable<Material> GetByTitle(string title)
         {
-            //return _materialLogic.GetByTitle(title);
-            return null;
+            return _context.Materials
+                .Where(p => p.Title == title)
+                .Select(p => p.ToMaterial());
         }
 
         public void RemoveById(int id, ICollection<Error> errorList)
         {
-            //_materialLogic.RemoveById(id);
+            var material = _context.Materials
+                 .FirstOrDefault(p => p.MaterialId == id);
+            if (material == null) { return; }
+
+            _context.Materials.Remove(material);
+            _context.SaveChanges();
 
         }
 
-        public void Update(Material coin, ICollection<Error> errorList)
+        public void Update(Material material, ICollection<Error> errorList)
         {
-            //_materialLogic.Update(coin);
+            var materialModel = material.ToMaterialModel;
+
+            var newMaterial = _context.Materials
+                .FirstOrDefault(c => c.Title == material.Title);
+
+            _context.SaveChanges();
         }
     }
 }
