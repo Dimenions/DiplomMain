@@ -11,7 +11,8 @@ namespace SSU.Coins.dbContext
     {
         public int RoleWebSiteId { get; set; }
 
-        public User User { get; set; }
+        public int UserId { get; set; } //Внешний ключ
+        public User User { get; set; } // навигационное свойство
         public string Name { get; set; }
 
     }

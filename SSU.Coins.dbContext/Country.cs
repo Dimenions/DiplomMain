@@ -10,8 +10,11 @@ namespace SSU.Coins.dbContext
     public class Country
     {
         public int CountryId { get; set; }
-        public Coin Coin { get; set; }
+
+        public int CoinId { get; set; } //Внешний ключ
+        public Coin Coin { get; set; } // навигационное свойство
         public string Title { get; set; }
+
 
     }
 }

@@ -13,6 +13,8 @@ namespace SSU.Coins.dbContext
 
         public Coin Coin { get; set; }
 
+        public int CoinId { get; set; }
+
         public string Title { get; set; }
 
 

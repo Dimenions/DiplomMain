@@ -21,19 +21,21 @@ namespace SSU.Coins.dbContext
 
         public byte[] HashPassword { get; set; }
 
-        public int? RoleWebSiteID { get; set; }
+        //public int? RoleWebSiteID { get; set; }
 
         public RoleWebSite RoleWebSite { get; set; }
 
         public byte[] Avatar { get; set; }
 
-        //public ICollection<UserCoin> UserCoins;
+        //public int CoinId { get; set; }
+
+        public ICollection<Coin> Coins { get; set; }//Коллекция монет
 
         /*public SaleCoins SaleCoins { get; set; }
 
         public UserCoin UserCoin { get; set; }*/
 
-        public Coin Coin { get; set; }
+        //public Coin Coin { get; set; }
     }
 }
 

@@ -22,11 +22,11 @@ namespace SSU.Coins.dbContext
 
         public string Description { get; set; }
 
-        public int? IdCountry { get; set; }
+        //public int? IdCountry { get; set; }
 
         public Country Country { get; set; }
 
-        public int? IdMaterial { get; set; }
+        //public int? IdMaterial { get; set; }
 
         public Material Material { get; set; }
 
@@ -38,9 +38,9 @@ namespace SSU.Coins.dbContext
 
         public bool Activ { get; set; }
 
-        public int UserId { get; set; }
+        public int UserId { get; set; }// внешний ключ
 
-        public User User { get; set; }
+        public User User { get; set; }// навигационное свойство
 
         public bool IsPresentation { get; set; }
     }

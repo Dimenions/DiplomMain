@@ -43,7 +43,8 @@ namespace SSU.Coins.dbContext.Configuration
             builder
                 .HasOne(p => p.RoleWebSite)
                 .WithOne(u => u.User)
-                .HasForeignKey<RoleWebSite>(p => p.RoleWebSiteId);
+                .HasForeignKey<RoleWebSite>(p => p.UserId);
+
 
             builder
                 .Property(p => p.Avatar);
@@ -51,6 +52,8 @@ namespace SSU.Coins.dbContext.Configuration
             /*builder
                 .Property(p => p.UserCoins)
                 .HasMaxLength(100000);*/
+
+
 
             builder
                 .ToTable("User");

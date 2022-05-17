@@ -28,11 +28,14 @@ namespace SSU.Coins.dbContext.Configuration
                 .Property(p => p.Activ) // Активна продажа или нет
                 .IsRequired();
 
-            builder
-                .HasOne(p => p.User)
-                .WithOne(u => u.Coin)
-                .HasForeignKey<Coin>(p => p.UserId);
+
             //----------------Для коллекции
+
+            builder 
+                .HasOne(p => p.User)
+                .WithMany(u => u.Coins)
+                .HasForeignKey(p => p.UserId);
+
             builder
                 .Property(p => p.IsPresentation) //На сайте или в коллекции
                 .IsRequired();
@@ -53,12 +56,12 @@ namespace SSU.Coins.dbContext.Configuration
             builder
                 .HasOne(p => p.Country)
                 .WithOne(u => u.Coin)
-                .HasForeignKey<Coin>(p => p.IdCountry);//Или Country
+                .HasForeignKey<Country>(p => p.CoinId);//Или Country
 
             builder
                 .HasOne(p => p.Material)
                 .WithOne(u => u.Coin)
-                .HasForeignKey<Coin>(p => p.IdMaterial);// Или Country
+                .HasForeignKey<Material>(p => p.CoinId);// Или Material
 
             builder
                 .Property(p => p.Picture);
