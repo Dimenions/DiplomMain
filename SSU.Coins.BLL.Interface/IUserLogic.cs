@@ -11,9 +11,9 @@ namespace SSU.Coins.BLL.Interface
 
         void Add(User user, out ICollection<Error> listError);
 
-        void Remove(int id, out ICollection<Error> listError);
+        void Remove(int id, ICollection<Error> listError);
 
-        void Update(User user, out ICollection<Error> listError);
+        void Update(User user, ICollection<Error> listError);
 
         IEnumerable<User> GetAll();
 

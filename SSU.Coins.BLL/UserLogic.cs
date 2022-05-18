@@ -7,7 +7,7 @@ using SSU.Coins.BLL.Extensions;
 
 namespace SSU.Coins.BLL
 {
-    public class UserLogic //: IUserLogic
+    public class UserLogic : IUserLogic
     {
         private CoinsContext _context;
 

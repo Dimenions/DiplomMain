@@ -2,6 +2,6 @@
 {
     public interface IMyRoleProviderLogic
     {
-        string GetRolesForUser(string username);
+       // string GetRolesForUser(string username);
     }
 }

@@ -6,6 +6,7 @@ namespace SSU.Coins.BLL.Interface
     public interface ICoinLogic
     {
         void Add(Coin coin, out ICollection<Error> errorList);
+        
         Coin GetById(int id);
 
         IEnumerable<Coin> GetAll();
@@ -16,13 +17,13 @@ namespace SSU.Coins.BLL.Interface
 
         IEnumerable<Coin> GetByTitle(string title);
 
-        IEnumerable<Coin> GetByTitleAndCountry(string title, int idCountry);
+        IEnumerable<Coin> GetByTitleAndCountry(string title, string nameCountry);
 
         IEnumerable<Coin> GetByPrice(int price);
 
-        IEnumerable<Coin> GetByMaterial(int id);
+        IEnumerable<Coin> GetByMaterial(string material);
 
-        IEnumerable<Coin> GetByCountry(int id);
+        IEnumerable<Coin> GetByCountry(string nameCountry);
 
         IEnumerable<Coin> GetByDate(int id);
     }

@@ -3,7 +3,7 @@ using SSU.Coins.BLL.Extensions;
 
 namespace SSU.Coins.BLL
 {
-    public class MyRoleProviderLogic : IMyRoleProviderLogic
+    /*public class MyRoleProviderLogic : IMyRoleProviderLogic
     {
        private CoinsContext _context;
 
@@ -12,11 +12,12 @@ namespace SSU.Coins.BLL
             _context = roleLogic;
         }
 
-        /*public string GetRolesForUser(string username)
+        public IEnumerable<> GetRolesForUser(string username)
         {
             return _context.RoleWebSites
-                 .Where(p => p.Name == username)
-                 .Select(p => p.ToRoleWebSite);
-        }*/
-    }
+                .Where(p => p.Name == username)
+                .Select(p => p.ToRoleWebSites());
+        }
+
+    }*/
 }

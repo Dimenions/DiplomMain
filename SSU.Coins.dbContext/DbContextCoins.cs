@@ -25,4 +25,7 @@ public class CoinsContext : DbContext
         //Update-Database
     }
 
+    public CoinsContext(DbContextOptions<CoinsContext> options)
+            : base(options)
+    { }
 }

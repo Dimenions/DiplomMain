@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SSU.Coins.BLL.Interface\SSU.Coins.BLL.Interface.csproj" />
+    <ProjectReference Include="..\SSU.Coins.Entities\SSU.Coins.Entities.csproj" />
+    <ProjectReference Include="..\SSU.Coins.Ioc\SSU.Coins.Ioc.csproj" />
+  </ItemGroup>
+
+</Project>

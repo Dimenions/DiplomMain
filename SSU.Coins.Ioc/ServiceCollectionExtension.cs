@@ -16,7 +16,7 @@ namespace SSU.Coins.Ioc
             return services.AddTransient<ICoinLogic, CoinLogic>()
                 .AddTransient<ICountryLogic, CountryLogic>()
                 .AddTransient<IMaterialLogic, MaterialLogic>()
-                //.AddTransient<IUserLogic, UserLogic>()
+                .AddTransient<IUserLogic, UserLogic>()
                 //.AddTransient<IRoleProviderLogic, RoleProviderLogic>()
                 .AddTransient<IRoleWebSiteLogic, RoleWebSiteLogic>();
         }

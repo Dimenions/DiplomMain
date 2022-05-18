@@ -15,10 +15,11 @@ namespace SSU.Coins.Ioc
             public static IServiceCollection AddDatabase(this IServiceCollection services,
                 IConfiguration configuration)
             {
-                var connectionString = configuration.GetConnectionString("ConnectionString");
-                services.AddDbContext<CoinsContext>(options => options
+                var connectionString = configuration.GetConnectionString("ConnectionString");//:DefaultConnection
+            services.AddDbContext<CoinsContext>(options => options
                     .UseSqlServer(connectionString));
-                return services;
+
+            return services;
                 
             }
         }
